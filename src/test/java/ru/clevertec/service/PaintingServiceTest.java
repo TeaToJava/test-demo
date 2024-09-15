@@ -48,6 +48,7 @@ class PaintingServiceTest {
         assertThat(paintings.equals(actualPaintings)).isTrue();
     }
 
+    @Test
     void shouldGetPaintings_whenPaintingsNotExist() {
         List<PaintingEntity> expectedPaintingEntities = new ArrayList<>();
         List<Painting> paintings = new ArrayList<>();
@@ -78,7 +79,7 @@ class PaintingServiceTest {
     }
 
     @Test
-    void create() {
+    void shouldCreatePainting() {
         PaintingEntity paintingEntity = TestData.generatePaintingEntity();
         Painting painting = TestData.generatePaintingFromPaintingEntity(paintingEntity);
         when(paintingMapper.toEntity(painting)).thenReturn(paintingEntity);
@@ -90,7 +91,7 @@ class PaintingServiceTest {
     }
 
     @Test
-    void update() {
+    void shouldUpdatePainting() {
         PaintingEntity paintingEntity = TestData.generatePaintingEntity();
         Painting painting = TestData.generatePaintingFromPaintingEntity(paintingEntity);
         UUID paintingId = UUID.randomUUID();
@@ -103,7 +104,7 @@ class PaintingServiceTest {
     }
 
     @Test
-    void delete() {
+    void shouldDeletePainting() {
         UUID paintingId = UUID.randomUUID();
         doNothing().when(paintingRepository).delete(paintingId);
         paintingService.delete(paintingId);

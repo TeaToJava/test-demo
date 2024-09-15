@@ -14,8 +14,6 @@ public class TestData {
                 .setTitle("Title " + new Random().nextInt())
                 .setArtist("Artist " + new Random().nextInt())
                 .setDate(LocalDate.now());
-        //для невалидных кейсов взять этот же метод
-        // и поменять поля см лекция 1час:18
     }
 
     public static Painting generatePaintingFromPaintingEntity(PaintingEntity paintingEntity) {
